@@ -10,7 +10,6 @@ klasa3 = []
 
 for i in dane:
     if int(i[4]) == 1:
-        print("here")
         klasa1.append(i[:4])
     elif int(i[4]) == 2:
         klasa2.append(i[:4])
@@ -36,3 +35,4 @@ wykres_linie_kropki_rysuj([sublist[1] for sublist in klasa2],[sublist[2] for sub
 wykres_linie_kropki_rysuj([sublist[1] for sublist in klasa3],[sublist[2] for sublist in klasa3],8)
 
 fig.show()
+

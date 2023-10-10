@@ -25,6 +25,7 @@ def wykres_linie_kropki_rysuj(wartosci_x, wartosci_y, index):
     styl = generuj_styl(style_index)
     plt.scatter(wartosci_x, wartosci_y, **styl)
 
+
 if __name__ == "__main__":
     fig = plt.figure()
     wykres_linie_rysuj([1, 3], [5, 8], 0)
@@ -32,3 +33,5 @@ if __name__ == "__main__":
     wykres_linie_kropki_rysuj([0, 2, 4], [2, 4, 6], 2)
     wykres_linie_kropki_rysuj([0, 1, 2, 3, 4, 5], [0, 1, 2, 3, 4, 5], 7)
     plt.show()
+
+
