@@ -4,7 +4,7 @@ def load_samples_with_text(plik_z_wartosciami, plik_z_atr):
     nazwa_atr = []
     with open(plik_z_wartosciami) as file:
         for line in file:
-            dane.append(line.strip('\n').split('\s+'))
+            dane.append(line.strip('\n').split('\t'))
 
     with open(plik_z_atr) as file:
         for lines in file:

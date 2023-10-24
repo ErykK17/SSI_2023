@@ -8,6 +8,7 @@ klasa1 = []
 klasa2 = []
 klasa3 = []
 
+
 for i in dane:
     if int(i[4]) == 1:
         klasa1.append(i[:4])
