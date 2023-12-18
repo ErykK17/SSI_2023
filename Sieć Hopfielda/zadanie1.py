@@ -100,11 +100,8 @@ for i in range(liczba_testow):
 plt.show()
 
 wzorce = [np.array(wzorzec).flatten() * 2 - 1 for wzorzec in wzorce]
-# wzorce = [np.where(np.array(x) == 0, -1, x).flatten() for x in wzorce]
-# testy = [np.where(np.array(x) == 0, -1, x).flatten() for x in testy]
-
 testy = [np.array(test).flatten() * 2 - 1 for test in testy]
-print(testy)
+
 siec = AlgorytmHopfielda(25)
 siec.nauczObrazy(wzorce)
 
