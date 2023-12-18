@@ -6,6 +6,13 @@ def odleglosc_euklidesowa(x, y):
     return ((x[0] - y[0]) ** 2 + (x[1] - y[1]) ** 2) ** 0.5
 
 
+def czarne_punkty(bitmapa):
+    for y, wiersz in enumerate(bitmapa):
+        for x, piksel in enumerate(wiersz):
+            if piksel == 1:
+                yield x, y
+
+
 def miara_niepodobienstwa(bitmapa1, bitmapa2):
     miara = 0
 
@@ -23,13 +30,6 @@ def miara_niepodobienstwa(bitmapa1, bitmapa2):
 
 def miara_podobienstwa_obustronnego(bitmapa1, bitmapa2):
     return -(miara_niepodobienstwa(bitmapa1, bitmapa2) + miara_niepodobienstwa(bitmapa2, bitmapa1))
-
-
-def czarne_punkty(bitmapa):
-    for y, wiersz in enumerate(bitmapa):
-        for x, piksel in enumerate(wiersz):
-            if piksel == 1:
-                yield (x, y)
 
 
 def znajdz_najbardziej_podobna(bitmapa_testowa, bitmapy_wzorcowe):
@@ -51,7 +51,7 @@ def wizualizuj_bitmapy(bitmapy, tytul):
     fig, axs = plt.subplots(1, len(bitmapy), figsize=(5 * len(bitmapy), 5))
 
     for i, bitmapa in enumerate(bitmapy):
-        axs[i].imshow(np.array(bitmapa), cmap='gray_r', vmin=0, vmax=1)
+        axs[i].imshow(np.array(bitmapa), cmap='binary')
         axs[i].axis('off')
         axs[i].set_title(f'Bitmapa {i + 1}')
 
