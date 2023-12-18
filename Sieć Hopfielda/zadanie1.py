@@ -8,7 +8,7 @@ class AlgorytmHopfielda:
         self.siec = np.zeros((rozmiar, rozmiar))
 
     def zeronaminus1(self, obraz):
-        obraz_zamieniony = np.where(np.array(obraz) == 0, -1, obraz)
+        obraz_zamieniony = [np.array(x).flatten() * 2 - 1 for x in obraz]
         return obraz_zamieniony
 
     def nauczObrazy(self, obrazy):
